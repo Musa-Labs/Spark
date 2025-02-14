@@ -5,7 +5,7 @@ import (
 	"os"
 
 	"github.com/spf13/cobra"
-	"github.com/Musa-Labs/Spark/cmd"
+	"github.com/Musa-Labs/Spark/command"
 )
 
 
@@ -20,8 +20,8 @@ var rootCmd = &cobra.Command{
 }
 
 func init() {
-	rootCmd.AddCommand(cmd.NewCmd())
-	rootCmd.AddCommand(cmd.DeployCmd())
+	rootCmd.AddCommand(command.NewCmd())
+	rootCmd.AddCommand(command.DeployCmd())
 	rootCmd.PersistentFlags().BoolVarP(&verbose, "verbose", "v", false, "Enable verbose output")
 }
 

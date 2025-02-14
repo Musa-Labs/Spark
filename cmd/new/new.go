@@ -13,7 +13,7 @@ func NewCmd() *cobra.Command {
 	var newCmd = &cobra.Command{
 		Use:   "new [project-name]",
 		Short: "Create a new project",
-		Long:  `Create a new project with the specified name and extract embedded files into it.`,
+		Long:  `Create a new project with the specified name.`,
 		Args:  cobra.ExactArgs(1),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			projectName := args[0]
@@ -31,10 +31,9 @@ func NewCmd() *cobra.Command {
 				fmt.Printf("Created project directory: %s\n", projectDir)
 			}
 
-			return nil //extractFiles(projectDir)
+			return nil
 		},
 	}
 	newCmd.Flags().BoolVarP(&verbose, "verbose", "v", false, "Enable verbose output")
 	return newCmd
 }
-

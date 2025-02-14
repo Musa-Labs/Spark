@@ -10,7 +10,6 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/Musa-Labs/Spark/cmd/deploy"
 	"github.com/Musa-Labs/Spark/cmd/new"
-
 )
 
 //go:embed assets/*
@@ -28,14 +27,10 @@ var rootCmd = &cobra.Command{
 }
 
 func init() {
-	// Add commands
 	rootCmd.AddCommand(new.NewCmd())
 	rootCmd.AddCommand(deploy.DeployCmd())
-
-	// Add flags to new command
 	rootCmd.PersistentFlags().BoolVarP(&verbose, "verbose", "v", false, "Enable verbose output")
 }
-
 
 func extractFiles(targetDir string) error {
 	if err := os.MkdirAll(targetDir, 0755); err != nil {

@@ -1,5 +1,5 @@
 build:
-	go build -o spark main.go
+	go build -o spark cmd/... main.go
 
 run: build
 	./spark

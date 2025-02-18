@@ -1,4 +1,4 @@
-module github.com/Musa-Labs/Spark
+module github.com/musa-labs/spark
 
 go 1.23.4
 

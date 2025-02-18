@@ -2,13 +2,14 @@ package spark
 
 import (
 	"fmt"
+	"gopkg.in/yaml.v3"
 	"log"
-
-	"gopkg.in/yaml.v2"
+	"os"
 )
 
 // Node represents the structure of your n8n custom node as defined in the YAML file.
-//  Adjust this struct to match your YAML file's structure.
+//
+//	Adjust this struct to match your YAML file's structure.
 type Node struct {
 	Name        string `yaml:"name"`
 	Description string `yaml:"description"`
@@ -31,7 +32,7 @@ func ReadNodeSpec(filePath string) (*Node, error) {
 	return &node, nil
 }
 
-//Example usage
+// Example usage
 func main() {
 	node, err := ReadNodeSpec("path/to/your/config.yaml")
 	if err != nil {
@@ -40,4 +41,3 @@ func main() {
 	fmt.Printf("Node Name: %s\n", node.Name)
 	fmt.Printf("Node Description: %s\n", node.Description)
 }
-

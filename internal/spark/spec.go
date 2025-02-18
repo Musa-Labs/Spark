@@ -32,12 +32,10 @@ func ReadNodeSpec(filePath string) (*Node, error) {
 	return &node, nil
 }
 
-// Example usage
-func main() {
-	node, err := ReadNodeSpec("path/to/your/config.yaml")
-	if err != nil {
-		log.Fatal(err)
+// NewNode creates a new Node instance.
+func NewNode(name, description string) *Node {
+	return &Node{
+		Name:        name,
+		Description: description,
 	}
-	fmt.Printf("Node Name: %s\n", node.Name)
-	fmt.Printf("Node Description: %s\n", node.Description)
 }
